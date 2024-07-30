@@ -9,7 +9,8 @@ int main(){
         factorial=factorial*n;
         n--;
     }
-    cout<<"factorial of 5 is "<<factorial<<endl;;
+    cout<<"factorial of 5 is "<<factorial<<endl;
+    
     int i=2;
     do{
         cout<<i<<endl;

@@ -14,6 +14,10 @@ int main(){
     arr[1][3]=78;
     cout<<arr[1][3]<<"\n";
     // garbage value if not assigned
-    cout<<arr[0][1];
+    cout<<arr[0][0]<<endl;
+    cout<<arr[0][1]<<endl;
+    cout<<arr[0][2]<<endl;
+    cout<<arr[0][3]<<endl;
+    cout<<arr[0][4]<<endl;
     return 0;
 }
