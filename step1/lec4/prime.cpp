@@ -1,75 +1,52 @@
 #include<bits/stdc++.h>
 using namespace std;
-// O(n) as full check 
-void bruteForce(int n){
+bool moreBasic(int n){
     int count=0;
-    for (int i = 1; i <=n; i++)
-    {
+    for(int i=1;i<=n;i++){
         if(n%i==0){
             count++;
         }
     }
-    if(count==2){
-        cout<<"prime";
-    }
-    else{
-        cout<<"not";
-    }
-    
+    return count==2?true:false;
 }
-// O(sqrt n)
-void opt(int n){
+bool brute(int n){
+    for(int i=2;i<n;i++){
+        if(n%i==0){
+            return false;
+        }
+    }
+    return true;
+}
+bool optimal(int n){
     int count=0;
-    for (int i = 1; i <=sqrt(n); i++)
-    {
+    for(int i=1;i<=sqrt(n);i++){
         if(n%i==0){
             count++;
-            if((n/i)!=i){
+            cout<<i<<" ";
+            if(i!=(n/i)){
+                cout<<(n/i)<<" ";
                 count++;
             }
         }
     }
-    if(count==2){
-        cout<<"prime";
-    }
-    else{
-        cout<<"not";
-    }
+    cout<<"number of divisors "<<count<<endl;
+    return count==2?true:false;
 }
-void breakWala(int n){
-    bool isPrime=true;
-    for(int i=2;i<n;i++){
-        // cout<<"Value of i : ";
-        if(n%i==0){
-            isPrime=false;
-            break;
-        }
-    }
-    if(isPrime){cout<<"prime";}
-    else{cout<<"Not prime";}
-    }
-
-void optimized(int n){
-    bool isPrime=true;
+bool best(int n){
     for(int i=2;i<=sqrt(n);i++){
         if(n%i==0){
-            isPrime=false;
-            break;
+            return false;
         }
     }
-    if(isPrime){cout<<"Prime";}
-    else{cout<<"Not ";}
+    return true;
 }
-    
 int main(){
     int n;
+    cout<<"enter number to be checked for prime : ";
     cin>>n;
-    bruteForce(n);
-    cout<<endl;
-    opt(n);
-    cout<<endl;
-    breakWala(n);
-    cout<<endl;
-    optimized(n);
+    cout<<"number by basic is prime -> "<<moreBasic(n)<<endl;
+    cout<<"number by brute is prime -> "<<brute(n)<<endl;
+    cout<<"number by optimal is prime -> "<<optimal(n)<<endl;
+    cout<<"number by best is prime -> "<<best(n)<<endl;
     return 0;
 }

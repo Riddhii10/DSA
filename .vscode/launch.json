@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Users/riddh/OneDrive/Desktop/DSA/step1/lec3",
-      "program": "c:/Users/riddh/OneDrive/Desktop/DSA/step1/lec3/build/Debug/outDebug",
+      "cwd": ".",
+      "program": "build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
